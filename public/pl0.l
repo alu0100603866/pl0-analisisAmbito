@@ -30,8 +30,7 @@ function idORrw(x) {
 [<>] return 'COMPARISON_OP'
 
 '=' return 'ASSIGN'
-[+-] return 'ADD'
-[*/] return 'MUL'
+[*/+-] return yytext
 
 \b[a-zA-Z_]\w*\b return idORrw(yytext)
 \b[0-9]+\b return 'NUMBER'
