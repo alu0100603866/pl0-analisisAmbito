@@ -76,5 +76,31 @@ suite('PL/0 Analizador ambito Jison', function() {
         assert.equal(result.sym_table.a.declared_in, 'global');
         assert.equal(result.procs[0].sym_table.a.declared_in, 'b');
     });
+      
+    test('Valor a constantes', function () {
+        assert.throw(function() {
+            pl0.parse('const a = 12; a = a+3.');
+        });
+    });
+      
+    test('Paso de parámetros erroneo', function () {
+        assert.throw(function() {
+            pl0.parse('procedure proc (a, b, c); a = b+c; call proc (1, 2).');
+        });
+    });
+      
+    test('Errores', function() {
+        assert.throw(function() {
+            pl0.parse('var a, b; while (3 < 1) do if (a > b) then a=2-(2.');
+        });
+           
+        assert.throw(function() {
+            pl0.parse('var i, c; for (i = 0; i < 10; i++) do c +=i.');
+        });
+           
+        assert.throw(function() {
+            pl0.parse('var a, b, c, d; begin a = b; b = c; c = d; d =; end.');
+        });
+    });
 
 });
