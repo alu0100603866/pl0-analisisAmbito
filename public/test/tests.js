@@ -70,5 +70,11 @@ suite('PL/0 Analizador ambito Jison', function() {
             }
         });
     });
+      
+      test('declared_in asociado a la más cercana', function() {
+        var result = pl0.parse('var a; procedure b(a); call b(a-5); a = a+3.');
+        assert.equal(result.sym_table.a.declared_in, 'global');
+        assert.equal(result.procs[0].sym_table.a.declared_in, 'b');
+    });
 
 });
