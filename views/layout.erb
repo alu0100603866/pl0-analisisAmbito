@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jison</title>
+    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+    <link rel="stylesheet" href="/styles.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="metro/css/metro-bootstrap.min.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="metro/css/metro-bootstrap-responsive.min.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="metro/min/iconFont.min.css" type="text/css" media="screen" charset="utf-8"/>
+    <script src="metro/js/metro-global.js"></script>
+    <script src="metro/js/jquery.widget.min.js"></script>
+    <script src="metro/js/metro.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body class="metro">
+    <div class="navbar">
+      <div class="navbar-content">
+        <ul class="element-menu content">
+		  <li><a href="Home" title="Home" <%=current?("/")%>>Home</a></li>
+          <li><a href="/grammar" title="Grammar" <%=current?("/grammar")%>>Grammar</a></li>
+          <li><a href="/tests" title="Tests" <%=current?("/test")%>>Test</a></li>
+          <li><a href="http://campusvirtual.ull.es/1314/course/view.php?id=1104" title="PL-UDV">PL-UDV</a></li>
+          <li><a href="https://github.com/crguezl/ull-etsii-grado-pl-jisoncalc" title="Repo">Repo</a></li>
+          <li><a href="http://en.wikipedia.org/wiki/Recursive_descent_parser#Example_parser" title="Wikipedia">PL0</a></li>
+          <li><a href="http://zaach.github.io/jison/" title="Jison">Jison</a></li>
+          <li><a href="http://intridea.github.io/omniauth/" title="Omniauth">Intridea Omniauth</a></li>
+          <li><a href="https://console.developers.google.com/project" title="Google Developers Console">Google Developers Console</a></li>
+          <li><a href="http://crguezl.github.io/pl-html/" title="PLGH">PL-GH</a></li>
+          <li><a href="https://github.com/SFEley/sinatra-flash" title="sinatra-flash">sinatra-flash</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <%= yield %>
+
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<br>
+	<div>
+		<a style="width:250px" class="command-button danger" href="/auth/google_oauth2" title="Google" <%=current?("/auth/google_oauth2")%>>
+		Login with Google+ </a>
+                                
+		<a style="width:250px" class="command-button inverse" href="/auth/github" title="Google" <%=current?("/auth/github")%>>
+        Login with Github</a>
+    </div>
+
+<br><br>
+
+<h1>Calculadora usando Jison</h1>
+
+<script type="text/javascript" src="pl0.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+
+
+
+<div class="grid">
+    <div class="row">
+        <div class="span10">
+   
+<div id="content">
+  <p>
+    <input type="file" id="examples" />
+  </p>
+  <p>
+  
+  
+  
+  <table>
+	
+    <tr>
+      <td>
+      <tr>
+      <div style="width:100%">
+       <div style="margin-left:10px;">
+        <form id="formsave" action="/save" method="post">
+          <textarea id="input" name="input" autofocus cols = "40" rows = "20"><%= source %></textarea>
+          <br/>
+          <label for="saveas">Save as</label>
+          <input id="saveas" type="text" name="fname" 
+                 title="Un identificador (que no sea la palabra 'test')"
+                 pattern="^(?!test$)\w+$"
+          />
+        </form>
+        </div>
+        </div>
+        </tr>
+		<tr>
+			</br><br>
+		</tr>
+		<button class="button primary" id="saveButton" type="button">save</button>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<button class="button success" id="parse" type="button">parse</button>
+	  
+      </td>
+      <td>
+        <% programs.sort.each do |p| %>	
+	    <button class="button info" href="<%= p.name %>" <%=current?('/'+p.name)%>> <i class="icon-file-css"></i> <%= p.name %> </button>
+	  <% end %>
+	  </td>
+
+      
+    </tr>
+  </table>
+  </p>
+  <p>
+    <div id="flash"><%= flash[:notice] if flash[:notice]%></div>
+  </p>
+
+  <div class="output"><pre><span id="output"/></pre></div>
+    </div>
+</div>
+
+

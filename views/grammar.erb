@@ -1,0 +1,62 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<br>
+Recuerde que una gramática $G$ es una cuaterna $G =(\Sigma,V,P,S)$.
+<ol>
+  <li>$\Sigma$ es el conjunto de terminales. 
+  <li>$V$ es un conjunto (disjunto de $\Sigma$) que se denomina conjunto de <i>variables sintácticas</i> o <i>categorías gramáticales</i>,
+  <li>$P$ es un conjunto de pares de $V \times (V \cup \Sigma )^*$. En vez de escribir
+  un par usando la notación $(A, \alpha) \in P$ se escribe $A \rightarrow \alpha$.
+  Un elemento de $P$ se denomina producción. 
+  <li>Por último, $S$ es un símbolo del conjunto
+  $V$ que se denomina símbolo de arranque.
+</ol>
+<ol>
+  <li> $\Sigma = \{ ; =, ID, PI, E, +, -, *, /, \text{^}, !, \%, (, ), NUMBER \}$, 
+  <li> $V = \{ prog, expressions, s, e \}$
+  <li> Productions:
+  <ol>
+    <li>
+<pre>
+prog
+    : expressions EOF
+    ;
+
+expressions
+    : s  
+    | expressions ';' s
+    ;
+
+s
+    : /* empty */
+    | e
+    ;
+
+e
+    : ID '=' e
+    | e '+' e
+    | e '-' e
+    | e '*' e
+    | e '/' e
+    | e '^' e
+    | e '!'
+    | e '%'
+    | '-' e 
+    | '(' e ')'
+    | NUMBER
+    | E
+    | PI
+    | ID 
+    ;
+</pre>
+  </ol>
+  <li> Start symbol: $prog$
+</ol>
+<BR>
+<BR>
+
