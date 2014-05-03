@@ -216,6 +216,7 @@ block
     {
       $$ = buildBlock(null, null, $1, $2);
     }
+  | block
   ;
 
 proc_decls
